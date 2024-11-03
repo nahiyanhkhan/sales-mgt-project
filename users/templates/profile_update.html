@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block title %}Update Profile{% endblock %}
+
+{% block content %}
+    <h1>Update Profile</h1>
+    <p>Username: {{ request.user.username }}</p>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Update</button>
+        <br>
+        <a href="{% url 'home' %}">Go to Home Page</a>
+    </form>
+{% endblock %}
